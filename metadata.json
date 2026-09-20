@@ -1,0 +1,6 @@
+{
+  "name": "The Living Book: Your Life, In Receipts",
+  "description": "An interactive digital archive transforming transaction receipts and digital traces into an intimate narrative journey: Raw Data, Emotional Insights, Narrative Connections, and Story Chapters.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

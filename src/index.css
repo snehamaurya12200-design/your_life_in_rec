@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Lora', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  /* Paper & archival textures */
+  .bg-parchment {
+    background-color: #fcfbf7;
+  }
+  .bg-parchment-warm {
+    background-color: #f7f4ec;
+  }
+  .bg-thermal-paper {
+    background-color: #fffefb;
+  }
+  .receipt-edge-bottom {
+    background-image: radial-gradient(circle, transparent, transparent 50%, #fffefb 50%, #fffefb 100%);
+    background-size: 14px 14px;
+  }
+}
+
+/* Custom Jagged Receipt Tear Effect */
+.receipt-tear-top {
+  position: relative;
+}
+.receipt-tear-top::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: radial-gradient(circle, transparent, transparent 4px, #fffefb 4.5px, #fffefb 100%);
+  background-size: 14px 14px;
+}
+
+.receipt-tear-bottom {
+  position: relative;
+}
+.receipt-tear-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: radial-gradient(circle, #fffefb 4px, transparent 4.5px);
+  background-size: 12px 12px;
+}
+
+/* Book fold spine effect */
+.book-spine-shadow {
+  box-shadow: inset 18px 0 24px -12px rgba(0, 0, 0, 0.18), inset -18px 0 24px -12px rgba(0, 0, 0, 0.18);
+}
+.book-gutter {
+  background: linear-gradient(90deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.02) 40%, rgba(255,255,255,0.4) 50%, rgba(0,0,0,0.02) 60%, rgba(0,0,0,0.08) 100%);
+}
+
+/* Custom scrollbar for book journal feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 140, 110, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 120, 90, 0.5);
+}
